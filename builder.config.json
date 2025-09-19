@@ -1,0 +1,6 @@
+{
+  "command": "firebase serve",
+  "serverUrl": "http://localhost:5000",
+  "authenticateProxy": false,
+  "commitMode": "commits"
+}
