@@ -4,32 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Writeups — Pranav P</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Orbitron', sans-serif; background: radial-gradient(ellipse at center, #0f172a 0%, #000000 100%); color: #f8fafc; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 20px; }
-    a { color: inherit; text-decoration: none; }
-    .container { width: 100%; max-width: 1100px; margin: 0 auto; }
-    header.site-header { width: 100%; margin: 10px 0 30px; }
-    .nav-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .brand-name { font-weight: 700; letter-spacing: 0.5px; text-shadow: 0 0 8px #38bdf8; }
-    .nav-links { display: flex; align-items: center; gap: 18px; }
-    .nav-link { opacity: 0.85; padding: 6px 10px; border-radius: 6px; transition: 0.25s; }
-    .nav-link:hover { opacity: 1; box-shadow: 0 0 10px #38bdf8; }
-    .section-title { font-size: 1.6rem; margin: 10px 0 16px; text-shadow: 0 0 6px #38bdf8; }
-    .projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-    .project-card { background: rgba(15,23,42,0.6); border: 1px solid #1e293b66; border-radius: 12px; padding: 16px; box-shadow: 0 0 12px #0a66c220; display: flex; flex-direction: column; gap: 12px; }
-    .project-title { font-size: 1.1rem; font-weight: 700; }
-    .project-desc { color: #cbd5e1; font-size: 0.98rem; line-height: 1.5; }
-    .tech-list { display: flex; flex-wrap: wrap; gap: 8px; }
-    .tech-badge { padding: 4px 10px; border-radius: 999px; border: 1px solid #38bdf880; color: #f8fafc; font-size: 0.8rem; }
-    .project-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-    .controls { display: flex; gap: 12px; margin: 12px 0 0; flex-wrap: wrap; }
-    footer.site-footer { width: 100%; margin: 30px 0 10px; text-align: center; }
-    .footer-note { margin-top: 1rem; color: #94a3b8; font-size: 0.75rem; }
-    @media (max-width: 480px) { .projects-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
@@ -43,37 +19,48 @@
         <a class="nav-link" href="/writeups.html">Writeups</a>
         <a class="nav-link" href="/contact.html">Contact</a>
       </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu-panel" hidden>
+      <ul class="mobile-menu-list" role="menu">
+        <li role="none"><a role="menuitem" class="mobile-menu-link" href="/">Home</a></li>
+        <li role="none"><a role="menuitem" class="mobile-menu-link" href="/projects.html">Projects</a></li>
+        <li role="none"><a role="menuitem" class="mobile-menu-link" href="/writeups.html">Writeups</a></li>
+        <li role="none"><a role="menuitem" class="mobile-menu-link" href="/contact.html">Contact</a></li>
+      </ul>
     </div>
   </header>
 
   <main class="container">
-    <h1 class="section-title">Box Writeups</h1>
+    <h1 class="section-title">Security Writeups</h1>
+    <p class="section-subtitle">Deep dives into penetration testing challenges and vulnerability research</p>
     <div class="projects-grid" id="writeups-grid" aria-live="polite"></div>
     <div class="controls">
-      <a id="prev" href="#" class="btn" aria-label="Previous page">Prev</a>
-      <a id="next" href="#" class="btn" aria-label="Next page">Next</a>
+      <a id="prev" href="#" class="btn" aria-label="Previous page">← Previous</a>
+      <a id="next" href="#" class="btn" aria-label="Next page">Next →</a>
     </div>
   </main>
 
   <footer class="site-footer">
-    <p class="footer-note">🚧 Built with caffeine & curiosity | v1.0<br><br>© 2025 Pranav P. All rights reserved.</p>
+    <div class="container">
+      <p class="footer-note">🚧 Built with caffeine & curiosity | v2.16<br>© 2025 Pranav P. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
     (function(){
       const data = [
-        { id:'strutted',src:'htb', title:'HTB — Strutted (Linux)', desc:'File upload Vuln and classic privilege vulnerabilities.', tags:['Recon','Web','Linux'] },
-        //{ id:'blue', title:'HTB — Blue (Windows)', desc:'Vulnerability validation and exploitation flow with defensive takeaways.', tags:['Vuln Research','Windows','Reporting'] },
-        { id:'jangow1',src:'VMs', title:'VulnHub — Jangow01 (Linux)', desc:'Command injection and DirtyCow exploit.', tags:['Linux','FTP'] },
-        { id:'Me_and_My_Girlfriend_1',src:'VMs', title:'VulnHub — Me & My Girlfriend (Linux)', desc:'Methods ranging from IDOR to running PHP as root.', tags:['Web','Linux','IDOR'] },
-        //{ id:'devel', title:'HTB — Devel (Windows)', desc:'IIS upload misuse and Windows privesc checklist.', tags:['IIS','Windows','Privilege Esc.'] },
-        // { id:'jerry', title:'HTB — Jerry (Windows)', desc:'Tomcat manager abuse and credential hygiene.', tags:['Tomcat','Windows','Creds'] },
-        // { id:'arctic', title:'HTB — Arctic (Windows)', desc:'ColdFusion vector and service-level controls.', tags:['ColdFusion','Windows','Exploitation'] },
-        // { id:'beep', title:'HTB — Beep (Linux)', desc:'Multi-service enumeration and chaining.', tags:['Multi‑service','Linux','Recon'] },
-        // { id:'netmon', title:'HTB — Netmon (Windows)', desc:'Anonymous FTP and monitoring exposures.', tags:['FTP','Windows','Monitoring'] },
-        // { id:'kenobi', title:'THM — Kenobi (Linux)', desc:'NFS/Samba enumeration, credential reuse, and privesc.', tags:['Recon','Linux','Privilege Esc.'] },
-        // { id:'rootme', title:'THM — RootMe (Linux)', desc:'Web exploitation to local privesc path.', tags:['Web','Linux','Privilege Esc.'] },
-        // { id:'optimum', title:'HTB — Optimum (Windows)', desc:'HTTP file server misuse and process abuse.', tags:['HTTP','Windows','Exploitation'] }
+        { id:'strutted',src:'htb',in:'git', title:'HTB — Strutted (Linux)', desc:'File upload vulnerabilities and classic privilege escalation techniques explored in this Linux-based challenge.', tags:['Recon','Web','Linux','Upload'] },
+        { id:'jangow1',src:'VMs',in:'git', title:'VulnHub — Jangow01 (Linux)', desc:'Command injection vulnerabilities leading to DirtyCow exploit for privilege escalation.', tags:['Linux','FTP','Command Injection'] },
+        { id:'Me_and_My_Girlfriend_1',src:'VMs',in:'git', title:'VulnHub — Me & My Girlfriend (Linux)', desc:'Multiple attack vectors from IDOR to running PHP as root user for complete system compromise.', tags:['Web','Linux','IDOR','PHP'] },
+        { id:'editor',src:'htb',in:'git', title:'HTB — Editor(Linux)', desc:'RCE through xWiki macro to passwords in plaintext and sudo permissions leading to root.', tags:['Linux','Web','RCE','HTB'] },
+        { id:'artificial',src:'htb',in:'git', title:'HTB — Artificial(Linux)', desc:'Additional HackTheBox writeups currently in development. Stay tuned for more detailed walkthroughs.', tags:['Coming Soon','HTB'] },
+        //{ id:'coming-soon-2',src:'VMs',in:'git', title:'VulnHub — Advanced Boxes', desc:'Complex multi-stage penetration testing scenarios and advanced exploitation techniques.', tags:['Coming Soon','Advanced'] },
+        //{ id:'coming-soon-3',src:'tryhackme',in:'git', title:'TryHackMe CTF Rooms', desc:'Capture The Flag challenges covering various cybersecurity domains and methodologies.', tags:['Coming Soon','CTF'] }
       ];
 
       const grid = document.getElementById('writeups-grid');
@@ -84,27 +71,122 @@
 
       function card(item){
         const tags = item.tags.map(t=>`<span class='tech-badge'>${t}</span>`).join('');
+        const isComingSoon = item.tags.includes('Coming Soon');
+        const buttonText = isComingSoon ? '⏳ Coming Soon' : '📖 Read Writeup';
+        const buttonClass = isComingSoon ? 'btn btn--coming-soon' : 'btn btn--linkedin';
+        const href = isComingSoon ? '#' : ((item.in=='git')?`https://github.com/6cloudguy/box-writeups/blob/main/${encodeURIComponent(item.src)}/${encodeURIComponent(item.id)}/README.md`:`https://medium.com/@6cloudguy/${encodeURIComponent(item.id)}`);
+        const target = isComingSoon ? '' : 'target="_blank" rel="noopener noreferrer"';
+        
         return `
-          <article class="project-card" aria-labelledby="wu-${item.id}">
+          <article class="project-card ${isComingSoon ? 'coming-soon' : ''}" aria-labelledby="wu-${item.id}">
             <h2 id="wu-${item.id}" class="project-title">${item.title}</h2>
             <p class="project-desc">${item.desc}</p>
             <div class="tech-list">${tags}</div>
             <div class="project-actions">
-              <a class="btn btn--github" href="https://github.com/6cloudguy/box-writeups/blob/main/${encodeURIComponent(item.src)}/${encodeURIComponent(item.id)}/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read ${item.title} writeup on GitHub">Read</a>
+              <a class="${buttonClass}" href="${href}" ${target} aria-label="${isComingSoon ? 'Coming soon' : `Read ${item.title} writeup on GitHub`}">
+                ${buttonText}
+              </a>
             </div>
           </article>`;
       }
 
       function render(){
-        const start = page * pageSize; const end = Math.min(start + pageSize, data.length);
+        const start = page * pageSize; 
+        const end = Math.min(start + pageSize, data.length);
         grid.innerHTML = data.slice(start, end).map(card).join('');
+        
+        // Add stagger animation
+        const cards = grid.querySelectorAll('.project-card');
+        cards.forEach((card, index) => {
+          card.style.animationDelay = `${index * 0.1}s`;
+        });
+        
         prev.style.visibility = page <= 0 ? 'hidden' : 'visible';
         next.style.visibility = page >= pages - 1 ? 'hidden' : 'visible';
       }
 
-      prev.addEventListener('click', e => { e.preventDefault(); if (page>0){ page--; render(); } });
-      next.addEventListener('click', e => { e.preventDefault(); if (page<pages-1){ page++; render(); } });
+      prev.addEventListener('click', e => { 
+        e.preventDefault(); 
+        if (page > 0) { 
+          page--; 
+          render(); 
+          grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } 
+      });
+      
+      next.addEventListener('click', e => { 
+        e.preventDefault(); 
+        if (page < pages - 1) { 
+          page++; 
+          render(); 
+          grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } 
+      });
+      
       render();
+
+      // Mobile menu functionality
+      const toggle = document.querySelector('.menu-toggle');
+      const panel = document.getElementById('mobile-menu');
+      
+      if(toggle && panel){
+        function closeMenu(){ 
+          panel.hidden = true; 
+          toggle.setAttribute('aria-expanded','false'); 
+        }
+        
+        function openMenu(){ 
+          panel.hidden = false; 
+          toggle.setAttribute('aria-expanded','true'); 
+        }
+        
+        toggle.addEventListener('click', ()=>{
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          expanded ? closeMenu() : openMenu();
+        });
+        
+        panel.addEventListener('click', (e)=>{ 
+          const a = e.target.closest('a'); 
+          if(a) closeMenu(); 
+        });
+        
+        document.addEventListener('keyup', (e)=>{ 
+          if(e.key==='Escape') closeMenu(); 
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!toggle.contains(e.target) && !panel.contains(e.target)) {
+            closeMenu();
+          }
+        });
+      }
+
+      // Add smooth reveal animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe all cards when they're rendered
+      const originalRender = render;
+      render = function() {
+        originalRender();
+        setTimeout(() => {
+          grid.querySelectorAll('.project-card').forEach(card => {
+            observer.observe(card);
+          });
+        }, 100);
+      };
     })();
   </script>
 </body>

@@ -4,87 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home — Pranav P</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(ellipse at center, #0f172a 0%, #000000 100%);
-      color: #f8fafc;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: left;
-      padding: 20px;
-      overflow-x: hidden;
-    }
-
-    .container { width: 100%; max-width: 1100px; margin: 0 auto; }
-
-    a { color: inherit; text-decoration: none; }
-
-    header.site-header { width: 100%; margin: 10px 0 30px; }
-    .nav-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .brand-name { font-weight: 700; letter-spacing: 0.5px; text-shadow: 0 0 8px #38bdf8; }
-    .nav-links { display: flex; align-items: center; gap: 18px; }
-    .nav-link { opacity: 0.85; padding: 6px 10px; border-radius: 6px; transition: 0.25s; }
-    .nav-link:hover { opacity: 1; box-shadow: 0 0 10px #38bdf8; }
-
-    /* Section basics */
-    section { margin: 30px 0; }
-    .section-title { font-size: 1.8rem; margin-bottom: 20px; text-shadow: 0 0 6px #38bdf8; }
-    .subsection-title { font-size: 1.4rem; }
-
-    /* About layout */
-    .about-wrapper { display: flex; gap: 40px; flex-wrap: wrap; align-items: flex-start; }
-    .about-img { flex: 0 0 240px; border-radius: 12px; overflow: hidden; box-shadow: 0 0 18px #38bdf820; }
-    .about-img img { width: 100%; height: auto; display: block; }
-
-    .about-content { flex: 1; min-width: 280px; }
-    .about-text { color: #cbd5e1; line-height: 1.7; margin-bottom: 20px; }
-
-    /* Qualifications */
-    .qualifications { margin-top: 20px; }
-    .qual-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .qual-item {
-      padding: 12px 16px;
-      border-left: 3px solid #38bdf8;
-      background: rgba(15,23,42,0.6);
-      border-radius: 8px;
-      box-shadow: 0 0 12px #0a66c220;
-    }
-    .qual-title { font-weight: bold; margin-bottom: 4px; color: #f8fafc; }
-    .qual-sub { font-size: 0.9rem; color: #94a3b8; }
-
-    /* Contact CTA */
-    .contact-cta {
-      margin-top: 30px;
-      padding: 20px;
-      border-radius: 12px;
-      background: rgba(15,23,42,0.6);
-      border: 1px solid #1e293b66;
-      text-align: center;
-      box-shadow: 0 0 12px #0a66c220;
-    }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 10px 20px; font-size: 1rem; font-weight: bold;
-      background: #0a66c2; color: white; border-radius: 8px;
-      text-decoration: none; transition: 0.3s; box-shadow: 0 0 12px #0a66c2;
-    }
-    .btn:hover { background: #004182; box-shadow: 0 0 16px #38bdf8, 0 0 6px #38bdf8 inset; }
-
-    footer.site-footer { width: 100%; margin: 30px 0 10px; text-align: center; }
-    .footer-note { margin-top: 1rem; color: #94a3b8; font-size: 0.75rem; }
-
-    @media (max-width: 768px) {
-      .about-wrapper { flex-direction: column; align-items: center; text-align: center; }
-      .about-content { text-align: center; }
-      .qual-list { align-items: center; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -93,55 +14,173 @@
       <a class="brand" href="/" aria-label="Home">
         <div class="brand-name">Pranav P</div>
       </a>
+
       <nav class="nav-links" aria-label="Primary">
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/projects.html">Projects</a>
         <a class="nav-link" href="/writeups.html">Writeups</a>
         <a class="nav-link" href="/contact.html">Contact</a>
       </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu-panel" hidden>
+      <ul class="mobile-menu-list" role="menu">
+        <li role="none"><a role="menuitem" class="mobile-menu-link" href="/">Home</a></li>
+        <li role="none"><a role="menuitem" class="mobile-menu-link" href="/projects.html">Projects</a></li>
+        <li role="none"><a role="menuitem" class="mobile-menu-link" href="/writeups.html">Writeups</a></li>
+        <li role="none"><a role="menuitem" class="mobile-menu-link" href="/contact.html">Contact</a></li>
+      </ul>
     </div>
   </header>
 
   <main class="container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h1 class="hero-title">Cybersecurity Aspirant</h1>
+      <p class="hero-subtitle">Red Team Operator | Penetration Tester | Security Researcher</p>
+      <p class="hero-description">
+        Passionate about offensive security with expertise in web exploitation
+        and ethical hacking. Currently pursuing <span class="highlight">eJPTv2 certification</span> while building 
+        practical experience through hands-on labs and real-world security challenges.
+      </p>
+      <div class="hero-cta">
+        <a href="/projects.html" class="btn-primary">View My Work</a>
+        <a href="/contact.html" class="btn-secondary">Get In Touch</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
     <section class="about-section">
-      <h1 class="section-title">Home</h1>
-      <div class="about-wrapper">
-        <!-- Replace with your own image -->
-        <div class="about-img">
-          <img src="assets/image - Copy.jpg" alt="Photo of Pranav P">
+      <div class="profile-card">
+        <div class="profile-img">
+          <img src="assets/image - Copy.jpg" alt="Pranav P - Cybersecurity aspirant">
         </div>
-        <div class="about-content">
-          <p class="about-text">
-            Hey, I’m <strong>Pranav P</strong> — a cybersecurity student obsessed with red teaming, adversary emulation, and offensive security.
-            Currently in my 2nd year of BSc CS, I’m prepping for <strong>eJPTv2</strong> while building a strong foundation in exploit fundamentals,
-            hands-on labs, and practical attack methodologies.
-          </p>
-          <p class="about-text">
-            I believe in methodical hacking — recon, enumeration, exploitation, post-exploitation, and clear reporting.
-            Beyond the terminal, I’m all about curiosity, caffeine, and sharing knowledge through write-ups and labs.
-          </p>
-
-          <div class="qualifications">
-            <h2 class="section-title subsection-title">Qualifications</h2>
-            <ul class="qual-list">
-              <li class="qual-item">
-                <div class="qual-title">BSc Computer Science (2nd Year)</div>
-                <div class="qual-sub">Deeper learning of Computers</div>
-              </li>
-              <!-- <li class="qual-item">
-                <div class="qual-title">eJPTv2 (In Progress)</div>
-                <div class="qual-sub">Practical penetration testing certification</div>
-              </li> -->
-              <li class="qual-item">
-                <div class="qual-title">Self-driven Pentesting Labs</div>
-                <div class="qual-sub">HackTheBox, TryHackMe, VulnHub</div>
-              </li>
-            </ul>
+        <div class="profile-name">Pranav P</div>
+        <div class="profile-role">Cybersecurity Aspirant</div>
+        <div class="brand-subtitle">
+          2nd Year BSc CS Student<br>
+          Founder, Cybersecurity Club – MG College
+        </div>
+        
+        <div class="profile-stats">
+          <div class="stat-item">
+            <span class="stat-label">Experience</span>
+            <span class="stat-value">1+ Years</span>
           </div>
+          <div class="stat-item">
+            <span class="stat-label">Certifications</span>
+            <span class="stat-value">3</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Focus</span>
+            <span class="stat-value">Red Team</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Status</span>
+            <span class="stat-value">Available</span>
+          </div>
+        </div>
+      </div>
 
-          <div class="contact-cta">
-            <p>⚡ Interested in collaborating, discussing security, or hiring me? Let’s connect!</p><br>
-            <a href="/contact.html" class="btn">Contact Me</a>
+      <div class="content-area">
+        <!-- About Me -->
+        <div class="section-card">
+          <h2 class="section-title">About Me</h2>
+          <p class="about-text">
+            I'm a dedicated <span class="highlight">cybersecurity aspirant</span> with a strong foundation in 
+            offensive security methodologies. As a 2nd-year Computer Science student and founder of the 
+            Cybersecurity Club at MG College, I combine academic knowledge with hands-on practical experience.
+          </p>
+          <p class="about-text">
+            My approach to security testing follows industry-standard methodologies: comprehensive reconnaissance, 
+            systematic enumeration, precise exploitation, thorough post-exploitation analysis, and detailed reporting. 
+            I believe in <span class="highlight">methodical, responsible disclosure</span> and contributing to the 
+            cybersecurity community through knowledge sharing.
+          </p>
+          <p class="about-text">
+            When I'm not behind the terminal, you'll find me preparing for my 
+            <span class="highlight">eJPTv2 certification</span> while continuously expanding my skills through 
+            platforms like HackTheBox, TryHackMe, and VulnHub.
+          </p>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section-card">
+          <h2 class="section-title">Technical Expertise</h2>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <div class="skill-title">🔴 Red Team Operations</div>
+              <ul class="skill-list">
+                <li class="skill-item">Adversary Emulation</li>
+                <li class="skill-item">Social Engineering</li>
+                <li class="skill-item">Phishing Campaigns</li>
+                <li class="skill-item">Command & Control</li>
+              </ul>
+            </div>
+            
+            <div class="skill-category">
+              <div class="skill-title">🔍 Penetration Testing</div>
+              <ul class="skill-list">
+                <li class="skill-item">Web Application Testing</li>
+                <li class="skill-item">Network Penetration</li>
+                <li class="skill-item">Wireless Security</li>
+                <li class="skill-item">Mobile App Security</li>
+              </ul>
+            </div>
+            
+            <div class="skill-category">
+              <div class="skill-title">⚙️ Tools & Frameworks</div>
+              <ul class="skill-list">
+                <li class="skill-item">Metasploit</li>
+                <li class="skill-item">Burp Suite</li>
+                <li class="skill-item">Nmap</li>
+                <li class="skill-item">Wireshark</li>
+              </ul>
+            </div>
+            
+            <div class="skill-category">
+              <div class="skill-title">💻 Programming</div>
+              <ul class="skill-list">
+                <li class="skill-item">Python, Bash Scripting</li>
+                <li class="skill-item">PowerShell, C/C++</li>
+                <li class="skill-item">JavaScript, PHP</li>
+                <li class="skill-item">Assembly (x86/x64)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section-card">
+          <h2 class="section-title">Certifications & Education</h2>
+          <div class="cert-grid">
+            <div class="cert-item">
+              <div class="cert-name">BSc Computer Science</div>
+              <div class="cert-issuer">MG College • 2nd Year</div>
+              <span class="cert-status">In Progress</span>
+            </div>
+            
+            <div class="cert-item">
+              <div class="cert-name">Ethical Hacking Certification</div>
+              <div class="cert-issuer">SWAYAM NPTEL</div>
+              <span class="cert-status">Completed</span>
+            </div>
+            
+            <div class="cert-item">
+              <div class="cert-name">Information Security</div>
+              <div class="cert-issuer">SWAYAM NPTEL</div>
+              <span class="cert-status">Completed</span>
+            </div>
+            
+            <div class="cert-item">
+              <div class="cert-name">AI for Penetration Testing</div>
+              <div class="cert-issuer">LinkedIn Learning</div>
+              <span class="cert-status">Completed</span>
+            </div>
           </div>
         </div>
       </div>
@@ -149,7 +188,26 @@
   </main>
 
   <footer class="site-footer">
-    <p class="footer-note">🚧 Built with caffeine & curiosity | v1.0<br><br>© 2025 Pranav P. All rights reserved.</p>
+        <p class="footer-note">🚧 Built with caffeine & curiosity | v2.16<br>© 2025 Pranav P. All rights reserved.</p>
   </footer>
+
+  <script>
+    (function(){
+      const toggle = document.querySelector('.menu-toggle');
+      const panel = document.getElementById('mobile-menu');
+      if(!toggle || !panel) return;
+      function closeMenu(){ panel.hidden = true; toggle.setAttribute('aria-expanded','false'); }
+      function openMenu(){ panel.hidden = false; toggle.setAttribute('aria-expanded','true'); }
+      toggle.addEventListener('click', ()=>{
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        expanded ? closeMenu() : openMenu();
+      });
+      panel.addEventListener('click', (e)=>{
+        const a = e.target.closest('a');
+        if(a) closeMenu();
+      });
+      document.addEventListener('keyup', (e)=>{ if(e.key==='Escape') closeMenu(); });
+    })();
+  </script>
 </body>
 </html>
