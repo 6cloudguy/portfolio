@@ -54,7 +54,7 @@
       const grid = document.getElementById('projects-grid');
       function card(p){
         const tech = p.tech.map(t=>`<span class='tech-badge'>${t}</span>`).join('');
-        const url = p.code != '#' ?`<a class="btn btn--linkedin" href="${p.code}" target=_blank aria-label="View ${p.title} code">Code</a>`:'';
+        const url = p.code != '#' ?`<a class="btn btn--linkedin" href="${p.code}" target=_blank aria-label="View ${p.title} code">Click Me</a>`:'';
         return `
           <article class="project-card" aria-labelledby="p-${p.id}">
             <h2 id="p-${p.id}" class="project-title">${p.title}</h2>
