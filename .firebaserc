@@ -1,7 +1,8 @@
 {
   "projects": {
-    "default": "portfolio-pranavp",
-    "portfolio": "pranavp-2006"
+    "default": "pranav-2006",
+    "copy": "pranav-2006",
+    "pranav": "pranavp-2006"
   },
   "targets": {},
   "etags": {}
