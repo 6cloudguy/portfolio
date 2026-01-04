@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 const writeupsData = [
     { id: 'strutted', src: 'htb', in: 'git', title: 'HTB — Strutted (Linux)', desc: 'File upload vulnerabilities and classic privilege escalation techniques explored in this Linux-based challenge.', tags: ['Recon', 'Web', 'Linux', 'Upload'] },
     { id: 'artificial', src: 'htb', in: 'git', title: 'HTB — Artificial(Linux)', desc: 'Vulnerabilities from file upload to backups leading to root', tags: ['Fle Upload', 'Linux', 'Backrest'] },
-    { id: 'Me_and_My_Girlfriend_1', src: 'VMs', in: 'git', title: 'VulnHub — Me & My Girlfriend (Linux)', desc: 'Multiple attack vectors from IDOR to running PHP as root user for complete system compromise.', tags: ['Web', 'Linux', 'IDOR', 'PHP'] },
+    { id: 'meandmygf1', src: 'VMs', in: 'git', title: 'VulnHub — Me & My Girlfriend (Linux)', desc: 'Multiple attack vectors from IDOR to running PHP as root user for complete system compromise.', tags: ['Web', 'Linux', 'IDOR', 'PHP'] },
     { id: 'jangow1', src: 'VMs', in: 'git', title: 'VulnHub — Jangow01 (Linux)', desc: 'Command injection vulnerabilities leading to DirtyCow exploit for privilege escalation.', tags: ['Linux', 'FTP', 'Command Injection'] },
     { id: 'editor', src: 'htb', in: 'git', title: 'HTB — Editor(Linux)', desc: 'RCE through xWiki macro to passwords in plaintext and sudo permissions leading to root.', tags: ['Linux', 'Web', 'RCE', 'HTB'] },
     { id: 'htb-soulmate-796e854e097b', src: 'htb', in: 'medium', title: 'HTB — Soulmate(Linux)', desc: 'Additional HackTheBox writeups currently in development. Stay tuned for more detailed walkthroughs.', tags: ['Coming Soon', 'HTB'] },
@@ -53,7 +53,7 @@ const Writeups = () => {
             <div className="projects-grid" id="writeups-grid" aria-live="polite" ref={gridRef}>
                 {currentData.map((item, index) => {
                     const isComingSoon = item.tags.includes('Coming Soon');
-                    const href = isComingSoon ? '#' : ((item.in === 'git') ? `https://github.com/6cloudguy/box-writeups/blob/main/${encodeURIComponent(item.src)}/${encodeURIComponent(item.id)}/README.md` : `https://medium.com/@6cloudguy/${encodeURIComponent(item.id)}`);
+                    const href = isComingSoon ? '#' : ((item.in === 'git') ? `https://6cloudguy.github.io/posts/${encodeURIComponent(item.id)}` : `https://medium.com/@6cloudguy/${encodeURIComponent(item.id)}`);
                     const target = isComingSoon ? undefined : "_blank";
                     const rel = isComingSoon ? undefined : "noopener noreferrer";
                     const buttonText = isComingSoon ? '⏳ Coming Soon' : '📖 Read Writeup';
