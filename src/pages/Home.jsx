@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { certificates } from '../data/certificates';
 
 const Home = () => {
     return (
@@ -33,10 +34,11 @@ const Home = () => {
                             <span className="stat-label">Experience</span>
                             <span className="stat-value">1 Year</span>
                         </div>
-                        {/* <div className="stat-item">
-              <span className="stat-label">Certifications</span>
-              <span className="stat-value">3</span>
-            </div> */}
+                    {   <div className="stat-item">
+                            <span className="stat-label">Certifications</span>
+                            <span className="stat-value">{certificates.length-1}</span>
+                        </div> 
+                    }
                         <div className="stat-item">
                             <span className="stat-label">Focus</span>
                             <span className="stat-value">Red Team</span>
@@ -53,7 +55,7 @@ const Home = () => {
                     <div className="section-card">
                         <h2 className="section-title">About Me</h2>
                         <p className="about-text">
-                            I'm a dedicated <span className="highlight">cybersecurity aspirant</span> with a strong foundation in
+                            I'm a <span className="highlight">cybersecurity aspirant</span> with a strong foundation in
                             offensive security methodologies. As a 2nd-year Computer Science student, I combine academic knowledge with hands-on practical experience.
                         </p>
                         <p className="about-text">
@@ -64,7 +66,7 @@ const Home = () => {
                         </p>
                         <p className="about-text">
                             When I'm not behind the terminal, you'll find me preparing for my
-                            <span className="highlight">eJPTv2 certification</span> while continuously expanding my skills through
+                            <span className="highlight"> eJPTv2 certification</span> while continuously expanding my skills through
                             platforms like HackTheBox, TryHackMe, and VulnHub.
                         </p>
                     </div>
@@ -100,41 +102,18 @@ const Home = () => {
                     <div className="section-card">
                         <h2 className="section-title">Certifications & Education</h2>
                         <div className="cert-grid">
-                            <div className="cert-item">
-                                <div className="cert-name">BSc Computer Science</div>
-                                <div className="cert-issuer">MG College • 2nd Year</div>
-                                <span className="cert-status">In Progress</span>
-                            </div>
-
-                            <div className="cert-item">
-                                <div className="cert-name">INE Certified Cloud Associate</div>
-                                <div className="cert-issuer">INE Security</div>
-                                <span className="cert-status">Completed</span>
-                            </div>
-                            
-                            <div className="cert-item">
-                                <div className="cert-name">Python (Basic)</div>
-                                <div className="cert-issuer">HackerRank</div>
-                                <span className="cert-status">Completed</span>
-                            </div>
-
-                            <div className="cert-item">
-                                <div className="cert-name">Cybersecurity Professional Certificate V2</div>
-                                <div className="cert-issuer">GOOGLE</div>
-                                <span className="cert-status">Completed</span>
-                            </div>
-
-                            <div className="cert-item">
-                                <div className="cert-name">Ethical Hacking Certification</div>
-                                <div className="cert-issuer">SWAYAM NPTEL</div>
-                                <span className="cert-status">Completed</span>
-                            </div>
-
-                            <div className="cert-item">
-                                <div className="cert-name">AI for Penetration Testing</div>
-                                <div className="cert-issuer">LinkedIn Learning</div>
-                                <span className="cert-status">Completed</span>
-                            </div>
+                            {certificates.map((cert) => (
+                                <div key={cert.id} className="cert-item">
+                                    <div className="cert-content">
+                                        <div className="cert-name">{cert.name}</div>
+                                        <div className="cert-issuer">{cert.issuer}</div>
+                                        <span className="cert-status">{cert.status}</span>
+                                    </div>
+                                    {cert.image && (
+                                        <img src={cert.image} alt={cert.name} className="cert-thumbnail" />
+                                    )}
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,51 @@
+export const certificates = [
+  {
+    id: 1,
+    name: 'BSc Computer Science',
+    issuer: 'MG College • 2nd Year',
+    status: 'In Progress',
+    image: null,
+  },
+  {
+    id: 2,
+    name: 'INE Certified Cloud Associate',
+    issuer: 'INE Security',
+    status: 'Completed',
+    image: '/assets/certs/ICCA.png',
+  },
+  {
+    id: 3,
+    name: 'Python (Basic)',
+    issuer: 'HackerRank',
+    status: 'Completed',
+    image: '/assets/certs/python.png',
+  },
+  {
+    id: 4,
+    name: 'Cybersecurity Professional Certificate V2',
+    issuer: 'GOOGLE',
+    status: 'Completed',
+    image: '/assets/certs/gcyb.png',
+  },
+  {
+    id: 5,
+    name: 'Ethical Hacking Certification',
+    issuer: 'SWAYAM NPTEL',
+    status: 'Completed',
+    image: '/assets/certs/eh.png',
+  },
+  {
+    id: 6,
+    name: 'Information Security',
+    issuer: 'Swayam',
+    status: 'Completed',
+    image: '/assets/certs/infosec.png',
+  },
+  {
+    id: 7,
+    name: 'AI for Penetration Testing',
+    issuer: 'LinkedIn Learning',
+    status: 'Completed',
+    image: '/assets/certs/ai.png',
+  },
+];
