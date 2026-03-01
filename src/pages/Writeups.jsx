@@ -1,12 +1,14 @@
 import { useState, useRef, useEffect } from 'react';
 
 const writeupsData = [
-    { id: 'strutted', src: 'htb', in: 'git', title: 'HTB — Strutted (Linux)', desc: 'File upload vulnerabilities and classic privilege escalation techniques explored in this Linux-based challenge.', tags: ['Recon', 'Web', 'Linux', 'Upload'] },
-    { id: 'artificial', src: 'htb', in: 'git', title: 'HTB — Artificial(Linux)', desc: 'Vulnerabilities from file upload to backups leading to root', tags: ['Fle Upload', 'Linux', 'Backrest'] },
-    { id: 'meandmygf1', src: 'VMs', in: 'git', title: 'VulnHub — Me & My Girlfriend (Linux)', desc: 'Multiple attack vectors from IDOR to running PHP as root user for complete system compromise.', tags: ['Web', 'Linux', 'IDOR', 'PHP'] },
-    { id: 'jangow1', src: 'VMs', in: 'git', title: 'VulnHub — Jangow01 (Linux)', desc: 'Command injection vulnerabilities leading to DirtyCow exploit for privilege escalation.', tags: ['Linux', 'FTP', 'Command Injection'] },
-    { id: 'editor', src: 'htb', in: 'git', title: 'HTB — Editor(Linux)', desc: 'RCE through xWiki macro to passwords in plaintext and sudo permissions leading to root.', tags: ['Linux', 'Web', 'RCE', 'HTB'] },
-    { id: 'htb-soulmate-796e854e097b', src: 'htb', in: 'medium', title: 'HTB — Soulmate(Linux)', desc: 'Additional HackTheBox writeups currently in development. Stay tuned for more detailed walkthroughs.', tags: ['Coming Soon', 'HTB'] },
+    { id: 'strutted', src: 'htb', in: 'git', title: 'Strutted — HTB', desc: 'File upload vulnerabilities and classic privilege escalation techniques explored in this Linux-based challenge.', tags: ['Recon', 'Web', 'Linux', 'Upload'] },
+    { id: 'artificial', src: 'htb', in: 'git', title: 'Artificial — HTB', desc: 'Vulnerabilities from file upload to backups leading to root', tags: ['Fle Upload', 'Linux', 'Backrest'] },
+    { id: 'meandmygf1', src: 'VMs', in: 'git', title: 'Me & My Girlfriend — VulnHub', desc: 'Multiple attack vectors from IDOR to running PHP as root user for complete system compromise.', tags: ['Web', 'Linux', 'IDOR', 'PHP'] },
+    { id: 'jangow1', src: 'VMs', in: 'git', title: 'Jangow01 — VulnHub', desc: 'Command injection vulnerabilities leading to DirtyCow exploit for privilege escalation.', tags: ['Linux', 'FTP', 'Command Injection'] },
+    { id: 'editor', src: 'htb', in: 'git', title: 'Editor — HTB', desc: 'RCE through xWiki macro to passwords in plaintext and sudo permissions leading to root.', tags: ['Linux', 'Web', 'RCE', 'HTB'] },
+    { id: 'htb-soulmate-796e854e097b', src: 'htb', in: 'medium', title: 'Soulmate — HTB', desc: 'Authentication Bypass vulnerability to file upload to RCE and others leading to full system compromise.', tags: ['Linux','CrushFTP', 'HTB'] },
+    { id: 'wingdata', src: 'htb', in: 'git', title: 'WingData — HTB', desc: 'Additional HackTheBox writeups currently in development. Stay tuned for more detailed walkthroughs.', tags: ['Coming Soon', 'HTB'] },
+    { id: 'interpreter', src: 'htb', in: 'git', title: 'Interpreter — HTB', desc: 'Additional HackTheBox writeups currently in development. Stay tuned for more detailed walkthroughs.', tags: ['Coming Soon', 'HTB'] },
     //{ id:'coming-soon-2',src:'VMs',in:'git', title:'VulnHub — Advanced Boxes', desc:'Complex multi-stage penetration testing scenarios and advanced exploitation techniques.', tags:['Coming Soon','Advanced'] },
     //{ id:'coming-soon-3',src:'tryhackme',in:'git', title:'TryHackMe CTF Rooms', desc:'Capture The Flag challenges covering various cybersecurity domains and methodologies.', tags:['Coming Soon','CTF'] }
 ];
