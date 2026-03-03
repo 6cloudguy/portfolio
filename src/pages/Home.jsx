@@ -107,7 +107,11 @@ const Home = () => {
                                     <div className="cert-content">
                                         <div className="cert-name">{cert.name}</div>
                                         <div className="cert-issuer">{cert.issuer}</div>
-                                        <span className="cert-status">{cert.status}</span>
+                                        {cert.status === 'Completed' ? (
+                                            <span className="cert-status-completed">Completed</span>
+                                        ) : (
+                                            <span className="cert-status-inprogress">In Progress</span>
+                                        )}
                                     </div>
                                     {cert.image && (
                                         <img src={cert.image} alt={cert.name} className="cert-thumbnail" />

@@ -300,8 +300,8 @@ html { scroll-behavior: smooth; }
 .cert-thumbnail { width: 155px; height: 110px; object-fit: cover; border-radius: 8px; display: block; flex-shrink: 0; }
 .cert-name { font-size: 1.2rem; font-weight: 700; color: #f8fafc; margin-bottom: 8px; }
 .cert-issuer { font-size: 0.95rem; color: #94a3b8; margin-bottom: 10px; }
-.cert-status { display: inline-block; padding: 4px 12px; background: rgba(34, 197, 94, 0.2); color: #22c55e; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
-
+.cert-status-completed { display: inline-block; padding: 4px 12px; background: rgba(34, 197, 94, 0.2); color: #22c55e; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+.cert-status-inprogress { display: inline-block; padding: 4px 12px; background: rgba(241, 175, 8, 0.2); color: #edcc10; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
 /* Contact page */
 .btn svg { width: 20px; height: 20px; fill: currentColor; }
 .btn--social { border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
